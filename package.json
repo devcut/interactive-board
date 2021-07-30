@@ -1,0 +1,35 @@
+{
+  "name": "interactive-board",
+  "version": "1.0.0",
+  "main": "lib/interactive-board.min.js",
+  "module": "src/index.js",
+  "description": "Interactive board w/ mouse in Javascript",
+  "author": "Guillaume Egloff",
+  "license": "MIT",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/devcut/interactive-board.git"
+  },
+  "bugs": {
+    "url": "https://github.com/devcut/interactive-board/issues"
+  },
+  "homepage": "https://github.com/devcut/interactive-board#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
+    "@babel/preset-env": "^7.14.8",
+    "autoprefixer": "^10.3.1",
+    "postcss": "^8.3.6",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
