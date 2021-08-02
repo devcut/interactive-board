@@ -10,15 +10,15 @@ export default class InteractiveBoard {
 
         const activateRandomShape = {
             enabled: true,
-            time: 1000,
+            time: 200,
             duration: 3000
         }
 
         const colors = ['#FFFFFF', '#873131'];
 
         const shape = {
-            width: 15,
-            height: 15,
+            width: 18,
+            height: 18,
             margin: 2,
             background: '#1d1d1d'
         }
@@ -74,7 +74,8 @@ export default class InteractiveBoard {
 
         for (let i = 0; i < this.maxShapeCapacityX * this.maxShapeCapacityY; i++) {
             let shape = document.createElement("div");
-            shape.setAttribute("data-position", i);
+            shape.setAttribute("data-position", i + 1);
+            shape.setAttribute("data-enabled", true);
 
             // Set style of shape with config
             shape.style.width = this.config.shape.width;
@@ -91,6 +92,10 @@ export default class InteractiveBoard {
 
             shape.addEventListener('mouseout', () => {
                 this.removeColor(shape);
+            });
+
+            shape.addEventListener('click', () => {
+                this.pulseShapeAnimation(shape);
             });
         }
 
@@ -113,11 +118,16 @@ export default class InteractiveBoard {
     /**
      * Set color of the shape
      * @param element
+     * @param color
      */
-    setColor(element) {
-        const color = this.getShapeColor();
-        element.style.background = color;
-        element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
+    setColor(element, color) {
+        if (element.getAttribute('data-enabled') === 'true') {
+            if (!color) {
+                color = this.getShapeColor();
+            }
+            element.style.background = color;
+            element.style.boxShadow = `0 0 2px ${color}, 0 0 10px ${color}`;
+        }
     }
 
     /**
@@ -125,30 +135,89 @@ export default class InteractiveBoard {
      * @param element
      */
     removeColor(element) {
-        element.style.background = this.config.shape.background;
-        element.style.boxShadow = `0 0 2px ${this.config.shape.background}`;
+        if (element.getAttribute('data-enabled') === 'true') {
+            element.style.background = this.config.shape.background;
+            element.style.boxShadow = `0 0 2px ${this.config.shape.background}`;
+        }
     }
 
     /**
      * Change color of random shape in the interactive board
      */
     activateRandomShape() {
+        // Check if config is enabled
         if (this.config.activateRandomShape.enabled) {
 
             let _this = this;
 
+            // Take random shape of interactive board and set random color for some time w/ interval
             setInterval(function () {
 
-                let randomShape = Math.floor(1 + Math.random() * _this.boardElement.childElementCount);
-                let child = document.querySelector(`${_this.config.board.element} > div:nth-child(${randomShape})`);
-                _this.setColor(child);
+                let randomShapeNumber = Math.floor(1 + Math.random() * _this.boardElement.childElementCount);
+                let randomShape = document.querySelector(`${_this.config.board.element} > div:nth-child(${randomShapeNumber})`);
 
-                setTimeout(function () {
-                    _this.removeColor(child);
-                }, _this.config.activateRandomShape.duration);
+                if (randomShape.getAttribute('data-enabled') === 'true') {
+                    _this.setColor(randomShape);
+
+                    setTimeout(function () {
+                        _this.removeColor(randomShape);
+                    }, _this.config.activateRandomShape.duration);
+                }
 
             }, this.config.activateRandomShape.time);
 
         }
+    }
+
+    pulseShapeAnimation(element) {
+        let elementInformation = this.getShapeInformation(element);
+
+        for (let i = 0; i < Object.keys(elementInformation.shapePulsePosition).length; i++) {
+
+            let _this = this;
+
+            if (elementInformation.shapePulsePosition[i]) {
+                let pulseElement = document.querySelector(`${_this.config.board.element} > div:nth-child(${elementInformation.shapePulsePosition[i]})`);
+
+                _this.setColor(pulseElement, elementInformation.shape.color);
+                pulseElement.setAttribute('data-enabled', false);
+
+                setTimeout(function () {
+                    pulseElement.setAttribute('data-enabled', true);
+                    _this.removeColor(pulseElement);
+                }, 1000);
+            }
+        }
+    }
+
+    getShapeInformation(element) {
+
+        const shapePosition = parseInt(element.getAttribute('data-position'));
+
+        return {
+            shape: {
+                color: this.rgb2hex(element.style.background),
+                position: shapePosition
+            },
+            shapePulsePosition: {
+                0: (shapePosition - this.maxShapeCapacityX + 1 >= 0) ? shapePosition - this.maxShapeCapacityX + 1 : null,
+                1: (shapePosition - this.maxShapeCapacityX >= 0) ? shapePosition - this.maxShapeCapacityX : null,
+                2: (shapePosition - this.maxShapeCapacityX - 1 >= 0) ? shapePosition - this.maxShapeCapacityX - 1 : null,
+                3: (shapePosition >= 0) ? shapePosition : null,
+                4: (shapePosition + 1 >= 0) ? shapePosition + 1 : null,
+                5: (shapePosition - 1 >= 0) ? shapePosition - 1 : null,
+                6: (shapePosition + this.maxShapeCapacityX + 1 >= 0) ? shapePosition + this.maxShapeCapacityX + 1 : null,
+                7: (shapePosition + this.maxShapeCapacityX >= 0) ? shapePosition + this.maxShapeCapacityX : null,
+                8: (shapePosition + this.maxShapeCapacityX - 1 >= 0) ? shapePosition + this.maxShapeCapacityX - 1 : null,
+            }
+        };
+    }
+
+    /**
+     * @param rgb
+     * @returns {string}
+     */
+    rgb2hex(rgb) {
+        return `#${rgb.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/).slice(1).map(n => parseInt(n, 10).toString(16).padStart(2, '0')).join('')}`;
     }
 }
