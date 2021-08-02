@@ -23,6 +23,10 @@ export default class InteractiveBoard {
             background: '#1d1d1d'
         }
 
+        const pulse = {
+            enabled: true
+        }
+
         this.config = {
             ...config,
             board: {
@@ -37,6 +41,9 @@ export default class InteractiveBoard {
             activateRandomShape: {
                 ...activateRandomShape, ...config.activateRandomShape
             },
+            pulse: {
+                ...pulse, ...config.pulse
+            }
         };
 
         this.boardElement = document.querySelector(this.config.board.element);
@@ -94,9 +101,11 @@ export default class InteractiveBoard {
                 this.removeColor(shape);
             });
 
-            shape.addEventListener('click', () => {
-                this.pulseShapeAnimation(shape);
-            });
+            if (this.config.pulse.enabled) {
+                shape.addEventListener('click', () => {
+                    this.pulseShapeAnimation(shape);
+                });
+            }
         }
 
     }
