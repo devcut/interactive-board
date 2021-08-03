@@ -6,6 +6,9 @@ export default class InteractiveBoard {
 
         const board = {
             element: '.interactive-board',
+            width: '100%',
+            height: '100vh',
+            background: '#000000'
         };
 
         const activateRandomShape = {
@@ -14,7 +17,7 @@ export default class InteractiveBoard {
             duration: 3000
         }
 
-        const colors = ['#FFFFFF', '#873131'];
+        const colors = [];
 
         const shape = {
             width: 18,
@@ -47,6 +50,9 @@ export default class InteractiveBoard {
         };
 
         this.boardElement = document.querySelector(this.config.board.element);
+        this.boardElement.style.width = this.config.board.width;
+        this.boardElement.style.height = this.config.board.height;
+        this.boardElement.style.background = this.config.board.background;
         this.maxShapeCapacityX = 0;
         this.maxShapeCapacityY = 0;
     }

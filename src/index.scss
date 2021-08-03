@@ -13,6 +13,7 @@
   justify-content: space-around;
   -ms-flex-line-pack: distribute;
   align-content: space-around;
+  overflow: hidden;
 
   & > div {
     -webkit-transition: all 1.5s ease;
