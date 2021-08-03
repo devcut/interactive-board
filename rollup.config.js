@@ -1,9 +1,7 @@
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import postcss from 'postcss';
 import scss from 'rollup-plugin-scss';
-import autoprefixer from 'autoprefixer';
 
 let outputFolder = 'lib/';
 let inputFolder = 'src/';
@@ -21,8 +19,7 @@ export default [
         plugins: [
             scss({
                 output: outputFolder + fileName + '.min.css',
-                outputStyle: "compressed",
-                processor: () => postcss([autoprefixer()]),
+                outputStyle: 'compressed',
             }),
             resolve(),
             babel({
@@ -45,7 +42,6 @@ export default [
             }),
             scss({
                 output: outputFolder + fileName + '.css',
-                processor: () => postcss([autoprefixer()]),
             }),
         ]
     }

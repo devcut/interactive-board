@@ -8,7 +8,13 @@
 
     <script src="lib/interactive-board.min.js"></script>
     <script type="text/javascript">
-        let ib = new InteractiveBoard({});
+        let ib = new InteractiveBoard({
+            activateRandomShape: {
+                enabled: true,
+                time: 100,
+                duration: 4000
+            },
+        });
 
         ib.init();
     </script>

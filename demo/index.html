@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/interactive-board.min.css">
+    <title>Demo basic</title>
+    <link href="../lib/interactive-board.min.css" rel="stylesheet">
+    <style>
+        .interactive-board-style {
+            width: 1000px;
+            height: 500px;
+            background: #252525;
+        }
+    </style>
+</head>
+<body>
+<div class="interactive-board"></div>
+
+<script src="../lib/interactive-board.min.js"></script>
+<script type="text/javascript">
+    let ib = new InteractiveBoard({
+        activateRandomShape: {
+            enabled: true,
+            time: 30,
+            duration: 5000
+        },
+        colors: ['#65DEF1', '#A8DCD1', '#DCE2C8', '#F96900', '#F17F29']
+    });
+
+    ib.init();
+</script>
+</body>
+</html>
