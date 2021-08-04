@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="#getting-started-arrow_down">Getting started</a>&nbsp;|&nbsp;<a href="#documentation-page_with_curl">Documentation</a>&nbsp;|&nbsp;<a href="https://github.com/devcut/interactive-board/demo" target="_blank">Demos</a>
+  <a href="#getting-started-arrow_down">Getting started</a>&nbsp;|&nbsp;<a href="#documentation-page_with_curl">Documentation</a>&nbsp;|&nbsp;<a href="https://devcut.github.io/interactive-board" target="_blank">Demos</a>
 </p>
 
 ## Getting started :arrow_down:
@@ -24,8 +24,12 @@ yarn add devcut/interactive-board
 
 With CDN
 
+```html
+<script src="https://cdn.jsdelivr.net/npm/interactive-board/lib/interactive-board.min.js"></script>
 ```
-<script src=""></script>
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/interactive-board/lib/interactive-board.min.css">
 ```
 
 or manual [download](https://github.com/devcut/interactive-board/archive/master.zip).
