@@ -125,7 +125,7 @@ let ib = new InteractiveBoard({
 ib.init();
 ```
 
-## Demos :grimacing:
+## Demos :grimacing: (it's coming)
 
 - [basic]()
 - [activateRandomShape]()
