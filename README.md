@@ -1,5 +1,5 @@
 <h1 align="center">
-  <a href="https://github.com/devcut/interactive-board"><img width="200" src="/demo/assets/img/interactive-board.gif"></a>
+  <a href="https://github.com/devcut/interactive-board"><img width="200" src="/docs/assets/img/interactive-board.gif"></a>
   <br>
   Interactive Board :bookmark::flashlight:
 </h1>
