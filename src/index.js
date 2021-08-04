@@ -91,9 +91,9 @@ export default class InteractiveBoard {
             shape.setAttribute("data-enabled", true);
 
             // Set style of shape with config
-            shape.style.width = this.config.shape.width;
-            shape.style.height = this.config.shape.height;
-            shape.style.margin = this.config.shape.margin;
+            shape.style.width = this.config.shape.width + 'px';
+            shape.style.height = this.config.shape.height + 'px';
+            shape.style.margin = this.config.shape.margin + 'px';
             shape.style.background = this.config.shape.background;
 
             // Append each element on interactive board
