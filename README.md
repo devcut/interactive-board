@@ -5,11 +5,11 @@
 </h1>
 
 <p align="center">
-  Interactive board is the lightweight plugin to offer mouse interaction with your users.
+  Interactive board is the lightweight (without dependencies) plugin to offer mouse interaction with your users.
 </p>
 
 <p align="center">
-  <a href="#getting-started">Getting started</a>&nbsp;|&nbsp;<a href="#documentation">Documentation</a>&nbsp;|&nbsp;<a href="https://github.com/devcut/interactive-board/demo" target="_blank">Demos</a>
+  <a href="#getting-started-arrow_down">Getting started</a>&nbsp;|&nbsp;<a href="#documentation-page_with_curl">Documentation</a>&nbsp;|&nbsp;<a href="https://github.com/devcut/interactive-board/demo" target="_blank">Demos</a>
 </p>
 
 ## Getting started :arrow_down:
@@ -123,8 +123,8 @@ ib.init();
 
 ## Demos :grimacing:
 
-- basic
-- activateRandomShape
-- colors
-- shape
-- pulse
+- [basic]()
+- [activateRandomShape]()
+- [colors]()
+- [shape]()
+- [pulse]()

@@ -12,8 +12,8 @@ export default class InteractiveBoard {
         };
 
         const activateRandomShape = {
-            enabled: true,
-            time: 200,
+            enabled: false,
+            time: 500,
             duration: 3000
         }
 

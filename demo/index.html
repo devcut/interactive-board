@@ -3,22 +3,20 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="lib/interactive-board.min.css">
     <title>Demo basic</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
     <link href="../lib/interactive-board.min.css" rel="stylesheet">
+    <style>
+
+    </style>
 </head>
 <body>
-<div class="interactive-board"></div>
+    <div class="interactive-board"></div>
 
-<script src="../lib/interactive-board.min.js"></script>
-<script type="text/javascript">
-    let ib = new InteractiveBoard({
-        activateRandomShape: {
-            enabled: true,
-            time: 30,
-            duration: 5000
-        },
-    });
+    <script src="../lib/interactive-board.min.js"></script>
+    <script type="text/javascript">
+        let ib = new InteractiveBoard({});
 
-    ib.init();
-</script>
+        ib.init();
+    </script>
 </body>
 </html>
