@@ -12,11 +12,14 @@
   <a href="#getting-started-arrow_down">Getting started</a>&nbsp;|&nbsp;<a href="#documentation-page_with_curl">Documentation</a>&nbsp;|&nbsp;<a href="https://devcut.github.io/interactive-board" target="_blank">Demos</a>
 </p>
 
+![npm bundle size](https://img.shields.io/bundlephobia/min/interactive-board)
+![dependencies](https://img.shields.io/badge/dependencies-no--dependencies-green)
+
 ## Getting started :arrow_down:
 
 ### Download
 
-With yarn
+With [yarn](https://yarnpkg.com/package/interactive-board)
 
 ```
 yarn add devcut/interactive-board
