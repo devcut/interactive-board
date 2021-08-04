@@ -130,8 +130,10 @@ ib.init();
 
 ## Demos :grimacing: (it's coming)
 
-- [basic]()
+- [basic](https://devcut.github.io/interactive-board/)
 - [activateRandomShape]()
 - [colors]()
 - [shape]()
 - [pulse]()
+
+<img src="/docs/assets/img/demo.gif">

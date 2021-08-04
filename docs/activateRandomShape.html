@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="lib/interactive-board.min.css">
+    <title>Demo basic</title>
+    <link href="assets/css/reset.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/interactive-board/lib/interactive-board.min.css" rel="stylesheet">
+    <style>
+
+    </style>
+</head>
+<body>
+<div class="interactive-board"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/interactive-board/lib/interactive-board.min.js"></script>
+<script type="text/javascript">
+    let ib = new InteractiveBoard({
+        activateRandomShape: {
+            enabled: true,
+            time: 40,
+            duration: 3000
+        }
+    });
+
+    ib.init();
+</script>
+</body>
+</html>
