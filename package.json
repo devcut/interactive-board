@@ -1,6 +1,6 @@
 {
   "name": "interactive-board",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "lib/interactive-board.min.js",
   "module": "src/index.js",
   "description": "Interactive board w/ mouse in Javascript",
