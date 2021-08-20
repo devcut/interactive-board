@@ -132,8 +132,7 @@ ib.init();
 
 - [basic](https://devcut.github.io/interactive-board/)
 - [activateRandomShape](https://devcut.github.io/interactive-board/activateRandomShape)
-- [colors]()
-- [shape]()
-- [pulse]()
+- [colors](https://devcut.github.io/interactive-board/colors)
+- [shape](https://devcut.github.io/interactive-board/shape)
 
 <img width="100%" src="/docs/assets/img/demo.gif">
