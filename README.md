@@ -128,7 +128,7 @@ let ib = new InteractiveBoard({
 ib.init();
 ```
 
-## Demos :grimacing: (it's coming)
+## Demos :grimacing:
 
 - [basic](https://devcut.github.io/interactive-board/)
 - [activateRandomShape](https://devcut.github.io/interactive-board/activateRandomShape)
